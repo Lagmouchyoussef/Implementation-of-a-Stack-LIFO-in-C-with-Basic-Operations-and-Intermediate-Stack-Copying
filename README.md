@@ -17,10 +17,10 @@ Write a program that includes the following functions:
 
 ### Part A — Stack Operations
 
-- A function `Bool_est_vide(pile *somet)` that returns 1 if the stack is empty, and 0 otherwise.
-- A function `pile* empiler(pile *somet, int val)` that creates a new node and inserts it. This operation is called "pushing" in stacks.
-- A function `int depiler(pile *somet)` that removes the last node added and returns its `data`.
-- A function `void afficher(pile *somet)` that displays the contents of the stack.
+- A function `Bool_is_empty(stack *top)` that returns 1 if the stack is empty, and 0 otherwise.
+- A function `stack* Push(stack *top, int val)` that creates a new node and inserts it. This operation is called "pushing" in stacks.
+- A function `int Pop(stack **top)` that removes the last node added and returns its `data`.
+- A function `void Display(stack *top)` that displays the contents of the stack.
 
 ### Part B — Copying a Stack
 
@@ -40,7 +40,7 @@ STACK 1     --->   STEP 1   --->   INTERMEDIATE STACK  --->   STEP 2   --->   ST
                                            12
 ```
 
-- Write a function `pile* copier(pile *somet)` that will copy the contents of stack 1 (passed as a parameter) to stack 2 using an intermediate stack.
+- Write a function `stack* Copy(stack *top)` that will copy the contents of stack 1 (passed as a parameter) to stack 2 using an intermediate stack.
 
 ### Part C — Testing
 
