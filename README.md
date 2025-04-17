@@ -1,2 +1,47 @@
-# Implementation-of-a-Stack-LIFO-in-C-with-Basic-Operations-and-Intermediate-Stack-Copying
-This project is a C implementation of a stack (LIFO) using linked lists. It includes standard operations (push, pop, emptiness check, display) as well as an innovative copying function via an intermediate stack, as outlined in the assignment. The code is documented and tested in a main program
+# Implementation of a Stack (LIFO) in C with Intermediate Stack Copying
+
+The main objective of this lab is to explore a new type of linear data structure that follows the LIFO (Last In First Out) algorithm. In this task, we must implement stacks using linked lists.
+
+## Problem
+
+The proposed structure is as follows:
+
+```c
+typedef struct Pile {
+    int data;
+    struct Pile *suiv;
+} pile;
+```
+
+Write a program that includes the following functions:
+
+### Part A — Stack Operations
+
+- A function `Bool_est_vide(pile *somet)` that returns 1 if the stack is empty, and 0 otherwise.
+- A function `pile* empiler(pile *somet, int val)` that creates a new node and inserts it. This operation is called "pushing" in stacks.
+- A function `int depiler(pile *somet)` that removes the last node added and returns its `data`.
+- A function `void afficher(pile *somet)` that displays the contents of the stack.
+
+### Part B — Copying a Stack
+
+In this part, we will take an initial stack and then copy its content to a final stack using an intermediate stack.
+
+The diagram below shows the details of this operation:
+
+```
+       TOP
+STACK 1     --->   STEP 1   --->   INTERMEDIATE STACK  --->   STEP 2   --->   STACK 2
+
+  12                                        6                                        12
+  14                                       12                                        14
+  16                                       20                                        16
+  20                                       16                                        20
+   6                                       14                                         6
+                                           12
+```
+
+- Write a function `pile* copier(pile *somet)` that will copy the contents of stack 1 (passed as a parameter) to stack 2 using an intermediate stack.
+
+### Part C — Testing
+
+- Test all these functions in the `main()` program.
